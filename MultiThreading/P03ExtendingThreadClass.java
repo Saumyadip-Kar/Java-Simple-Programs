@@ -1,22 +1,13 @@
 /**
- * Creating Basic Threads by Implementing Runnable Interface
- * P02ImplementingRunnable
+ * P03ExtendingThreadClass
  */
-public class P02ImplementingRunnable {
+public class P03ExtendingThreadClass {
     public static void main(String[] args) {
-        Thread2 t1 = new Thread2(10,2,"Sample-Thread-1");
-        Thread2 t2 = new Thread2(22, 1,"Sample-Thread-2");
-        t1.start();
-        t2.start();
+        G0G1G2 g = new G0G1G2();
+        g.x=0;
     }
 }
-
-/**
- * 
- *Thread1
- */
-class Thread1 implements Runnable{
-    Thread t;
+class Thread2 extends Thread{
     static int index=0;
     int cur_index=0;
     int iter=0;
@@ -38,8 +29,8 @@ class Thread1 implements Runnable{
         System.out.println(name+" Stopped");
     }
 
-    Thread1(int n,int sec, String name){
-        t=new Thread(this,name);
+    Thread2(int n,int sec, String name){
+       super(name);
         index+=1;
         cur_index=index;
         this.iter=n;
@@ -47,3 +38,5 @@ class Thread1 implements Runnable{
         this.name=name;
     }
 }
+
+

@@ -1,6 +1,9 @@
 /**
  * P01
  */
+class G0G1G2{
+    int x=0;
+}
 public class P01ControllingTheMainThread {
     public static void main(String[] args) {
         Thread t = Thread.currentThread();
